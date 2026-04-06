@@ -42,6 +42,28 @@ export const initialSessionState: SessionState = {
   skippedStep8: false,
 };
 
+export interface Restaurant {
+  id: string;
+  name: string;
+  owner: string;
+  deviceId: string;
+  taxRate: string | null;
+  taxRateValue: number | null;
+  family: string | null;
+  category: string | null;
+  modifierGroup: string | null;
+  menuItems: MenuItem[];
+  createdAt: string;
+}
+
+export interface MenuItem {
+  name: string;
+  price: number;
+  family: string | null;
+  category: string | null;
+  modifierGroup: string | null;
+}
+
 export interface StepProps {
   sessionState: SessionState;
   setSessionState: React.Dispatch<React.SetStateAction<SessionState>>;
