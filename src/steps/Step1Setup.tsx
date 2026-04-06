@@ -13,6 +13,10 @@ import { CopyableId } from "@/components/ui/CopyableId";
 import { useApi } from "@/hooks/useApi";
 import type { StepProps } from "@/types/session";
 
+interface Step1Props extends StepProps {
+  onDashboard: () => void;
+}
+
 const schema = z.object({
   restaurantName: z.string().min(1, "Required"),
   tradeName: z.string().min(1, "Required").max(64),
