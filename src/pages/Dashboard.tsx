@@ -144,10 +144,13 @@ export default function Dashboard({ restaurants, onAddNew, onDelete, onSelect, s
                       <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
                         <Store className="w-4 h-4 text-primary" />
                       </div>
-                      <div className="min-w-0">
+                       <div className="min-w-0">
                         <p className="text-sm font-semibold text-foreground truncate">{r.name}</p>
                         <p className="text-xs text-muted-foreground">
                           {r.menuItems.length} item{r.menuItems.length !== 1 ? "s" : ""} · {r.owner}
+                        </p>
+                        <p className="text-xs text-muted-foreground">
+                          {r.family || "No family"} · {r.taxRate ? `Tax: ${r.taxRateValue}%` : "No tax"}
                         </p>
                       </div>
                     </div>
@@ -204,10 +207,12 @@ export default function Dashboard({ restaurants, onAddNew, onDelete, onSelect, s
                           </CardTitle>
                         </CardHeader>
                         <CardContent className="space-y-3">
-                          <InfoRow label="Tax Rate" value={selected.taxRate ? `${selected.taxRate} (${selected.taxRateValue}%)` : null} icon={Receipt} />
-                          <InfoRow label="Family" value={selected.family} icon={Package} />
-                          <InfoRow label="Category" value={selected.category} icon={Grid3X3} />
-                          <InfoRow label="Modifier Group" value={selected.modifierGroup} icon={Settings2} />
+                           <InfoRow label="Menu Items" value={`${selected.menuItems.length} item${selected.menuItems.length !== 1 ? "s" : ""}`} icon={UtensilsCrossed} />
+                           <InfoRow label="Tax Rate" value={selected.taxRate ? `${selected.taxRate} (${selected.taxRateValue}%)` : null} icon={Receipt} />
+                           <InfoRow label="Family" value={selected.family} icon={Package} />
+                           <InfoRow label="Category" value={selected.category} icon={Grid3X3} />
+                           <InfoRow label="Modifier Group" value={selected.modifierGroup} icon={Settings2} />
+                           <InfoRow label="Device ID" value={selected.deviceId} icon={Tablet} />
                         </CardContent>
                       </Card>
                     </div>
