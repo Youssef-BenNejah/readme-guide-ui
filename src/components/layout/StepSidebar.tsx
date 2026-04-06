@@ -9,7 +9,9 @@ interface Step {
 const STEPS: Step[] = [
   { number: 1, title: "Restaurant Setup" },
   { number: 2, title: "Owner Login" },
-  { number: 3, title: "Import Menu" },
+  { number: 3, title: "Tax Rate" },
+  { number: 4, title: "Product Family" },
+  { number: 5, title: "Import Menu" },
 ];
 
 interface StepSidebarProps {

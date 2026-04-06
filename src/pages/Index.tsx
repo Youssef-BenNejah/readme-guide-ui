@@ -116,7 +116,7 @@ const Index = () => {
             Dashboard
           </Button>
           <div className="flex-1 hidden md:block">
-            <ProgressBar currentStep={currentStep > 3 ? 4 : currentStep} totalSteps={TOTAL_STEPS + 1} />
+            <ProgressBar currentStep={currentStep > 5 ? 6 : currentStep} totalSteps={TOTAL_STEPS + 1} />
           </div>
         </div>
         {renderStep()}
