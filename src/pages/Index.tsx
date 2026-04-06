@@ -53,7 +53,8 @@ const Index = () => {
       case 8: return <Step8ModifierGroup {...props} onNext={() => goTo(9)} onSkip={handleSkip8} />;
       case 9: return <Step9Modifiers {...props} onNext={() => goTo(10)} onSkip={() => { markComplete(9); setCurrentStep(10); }} />;
       case 10: return <Step10MenuItem {...props} onNext={() => { markComplete(10); setCurrentStep(11); }} />;
-      case 11: return <StepComplete sessionState={sessionState} onAddAnother={() => setCurrentStep(10)} />;
+      case 11: return <StepComplete sessionState={sessionState} onAddAnother={() => setCurrentStep(10)} onDashboard={() => setCurrentStep(12)} />;
+      case 12: return <Dashboard sessionState={sessionState} onBack={() => setCurrentStep(11)} />;
       default: return null;
     }
   };
