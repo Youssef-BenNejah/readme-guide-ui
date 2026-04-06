@@ -93,8 +93,10 @@ const Index = () => {
     switch (currentStep) {
       case 1: return <Step1Setup {...props} onNext={() => goTo(2)} />;
       case 2: return <Step2Login {...props} onNext={() => goTo(3)} />;
-      case 3: return <Step3ImportMenu {...props} onNext={handleImport} />;
-      case 4: return <StepComplete sessionState={sessionState} importedItems={importedItems} onDashboard={finishOnboarding} />;
+      case 3: return <Step3TaxRate {...props} onNext={() => goTo(4)} />;
+      case 4: return <Step4ProductFamily {...props} onNext={() => goTo(5)} />;
+      case 5: return <Step3ImportMenu {...props} onNext={handleImport} />;
+      case 6: return <StepComplete sessionState={sessionState} importedItems={importedItems} onDashboard={finishOnboarding} />;
       default: return null;
     }
   };
