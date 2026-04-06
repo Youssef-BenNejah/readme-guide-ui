@@ -7,6 +7,7 @@ import type { SessionState } from "@/types/session";
 interface StepCompleteProps {
   sessionState: SessionState;
   onAddAnother: () => void;
+  onDashboard: () => void;
 }
 
 export function StepComplete({ sessionState, onAddAnother }: StepCompleteProps) {
