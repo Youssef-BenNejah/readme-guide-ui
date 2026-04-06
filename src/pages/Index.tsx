@@ -103,7 +103,7 @@ const Index = () => {
 
   return (
     <div className="flex min-h-screen bg-background">
-      <StepSidebar currentStep={currentStep > 3 ? 3 : currentStep} completedSteps={completedSteps} />
+      <StepSidebar currentStep={currentStep > 5 ? 5 : currentStep} completedSteps={completedSteps} />
       <div className="flex-1 flex flex-col min-h-screen">
         <div className="flex items-center gap-4 px-6 pt-6">
           <Button
