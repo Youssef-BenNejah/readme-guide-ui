@@ -28,7 +28,7 @@ const schema = z.object({
 
 type FormData = z.infer<typeof schema>;
 
-export function Step1Setup({ sessionState, setSessionState, onNext, onDashboard }: Step1Props) {
+export function Step1Setup({ sessionState, setSessionState, onNext }: StepProps) {
   const [showPin, setShowPin] = useState(false);
   const [result, setResult] = useState<any>(null);
   const { execute, loading, error } = useApi();
