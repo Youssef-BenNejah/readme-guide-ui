@@ -47,8 +47,11 @@ export function StepComplete({ sessionState, onAddAnother, onDashboard }: StepCo
           <Button onClick={onAddAnother} className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90">
             Add Another Menu Item
           </Button>
+          <Button onClick={onDashboard} variant="outline" className="flex-1 border-primary/30 text-primary hover:bg-primary/10">
+            View Dashboard
+          </Button>
           <Button variant="outline" onClick={() => setShowJson(!showJson)} className="flex-1 border-border text-muted-foreground hover:text-foreground">
-            {showJson ? "Hide" : "View"} Setup Summary
+            {showJson ? "Hide" : "View"} JSON
           </Button>
         </div>
 
