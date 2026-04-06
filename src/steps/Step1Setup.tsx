@@ -13,6 +13,10 @@ import { CopyableId } from "@/components/ui/CopyableId";
 import { useApi } from "@/hooks/useApi";
 import type { StepProps } from "@/types/session";
 
+interface Step1Props extends StepProps {
+  onDashboard: () => void;
+}
+
 const schema = z.object({
   restaurantName: z.string().min(1, "Required"),
   tradeName: z.string().min(1, "Required").max(64),
@@ -28,7 +32,7 @@ const schema = z.object({
 
 type FormData = z.infer<typeof schema>;
 
-export function Step1Setup({ sessionState, setSessionState, onNext }: StepProps) {
+export function Step1Setup({ sessionState, setSessionState, onNext, onDashboard }: Step1Props) {
   const [showPin, setShowPin] = useState(false);
   const [result, setResult] = useState<any>(null);
   const { execute, loading, error } = useApi();
@@ -89,6 +93,11 @@ export function Step1Setup({ sessionState, setSessionState, onNext }: StepProps)
 
   return (
     <StepLayout stepNumber={1} title="Create Your Restaurant" description="This bootstraps your restaurant, your first device, and your owner account in a single call.">
+      <div className="flex justify-end mb-4">
+        <Button type="button" variant="outline" size="sm" onClick={onDashboard} className="border-primary/30 text-primary hover:bg-primary/10 text-xs">
+          View Dashboard
+        </Button>
+      </div>
       {error && <ApiErrorBanner message={error} />}
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
