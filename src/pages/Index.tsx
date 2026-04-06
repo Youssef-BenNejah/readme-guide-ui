@@ -12,6 +12,7 @@ import { Step8ModifierGroup } from "@/steps/Step8ModifierGroup";
 import { Step9Modifiers } from "@/steps/Step9Modifiers";
 import { Step10MenuItem } from "@/steps/Step10MenuItem";
 import { StepComplete } from "@/steps/StepComplete";
+import Dashboard from "@/pages/Dashboard";
 import { initialSessionState } from "@/types/session";
 import type { SessionState } from "@/types/session";
 
