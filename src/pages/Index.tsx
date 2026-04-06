@@ -43,7 +43,7 @@ const Index = () => {
     const props = { sessionState, setSessionState };
 
     switch (currentStep) {
-      case 1: return <Step1Setup {...props} onNext={() => goTo(2)} />;
+      case 1: return <Step1Setup {...props} onNext={() => goTo(2)} onDashboard={() => setCurrentStep(12)} />;
       case 2: return <Step2Login {...props} onNext={() => goTo(3)} />;
       case 3: return <Step3ChangePin {...props} onNext={() => goTo(4)} />;
       case 4: return <Step4RestaurantProfile {...props} onNext={() => goTo(5)} onSkip={() => { markComplete(4); setCurrentStep(5); }} />;

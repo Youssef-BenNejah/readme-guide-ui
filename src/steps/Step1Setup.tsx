@@ -93,6 +93,11 @@ export function Step1Setup({ sessionState, setSessionState, onNext, onDashboard 
 
   return (
     <StepLayout stepNumber={1} title="Create Your Restaurant" description="This bootstraps your restaurant, your first device, and your owner account in a single call.">
+      <div className="flex justify-end mb-4">
+        <Button type="button" variant="outline" size="sm" onClick={onDashboard} className="border-primary/30 text-primary hover:bg-primary/10 text-xs">
+          View Dashboard
+        </Button>
+      </div>
       {error && <ApiErrorBanner message={error} />}
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
