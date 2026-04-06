@@ -4,6 +4,8 @@ import { StepSidebar } from "@/components/layout/StepSidebar";
 import { ProgressBar } from "@/components/layout/ProgressBar";
 import { Step1Setup } from "@/steps/Step1Setup";
 import { Step2Login } from "@/steps/Step2Login";
+import { Step3TaxRate } from "@/steps/Step3TaxRate";
+import { Step4ProductFamily } from "@/steps/Step4ProductFamily";
 import { Step3ImportMenu } from "@/steps/Step3ImportMenu";
 import { StepComplete } from "@/steps/StepComplete";
 import Dashboard from "@/pages/Dashboard";
