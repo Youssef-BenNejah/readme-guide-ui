@@ -4,6 +4,8 @@ import { StepSidebar } from "@/components/layout/StepSidebar";
 import { ProgressBar } from "@/components/layout/ProgressBar";
 import { Step1Setup } from "@/steps/Step1Setup";
 import { Step2Login } from "@/steps/Step2Login";
+import { Step3TaxRate } from "@/steps/Step3TaxRate";
+import { Step4ProductFamily } from "@/steps/Step4ProductFamily";
 import { Step3ImportMenu } from "@/steps/Step3ImportMenu";
 import { StepComplete } from "@/steps/StepComplete";
 import Dashboard from "@/pages/Dashboard";
@@ -11,7 +13,7 @@ import { initialSessionState } from "@/types/session";
 import { Button } from "@/components/ui/button";
 import type { SessionState, Restaurant, MenuItem } from "@/types/session";
 
-const TOTAL_STEPS = 3;
+const TOTAL_STEPS = 5;
 
 const Index = () => {
   const [view, setView] = useState<"dashboard" | "onboarding">("dashboard");
@@ -45,7 +47,7 @@ const Index = () => {
 
   const handleImport = (items: MenuItem[]) => {
     setImportedItems(items);
-    goTo(4);
+    goTo(6);
   };
 
   const finishOnboarding = () => {
@@ -91,15 +93,17 @@ const Index = () => {
     switch (currentStep) {
       case 1: return <Step1Setup {...props} onNext={() => goTo(2)} />;
       case 2: return <Step2Login {...props} onNext={() => goTo(3)} />;
-      case 3: return <Step3ImportMenu {...props} onNext={handleImport} />;
-      case 4: return <StepComplete sessionState={sessionState} importedItems={importedItems} onDashboard={finishOnboarding} />;
+      case 3: return <Step3TaxRate {...props} onNext={() => goTo(4)} />;
+      case 4: return <Step4ProductFamily {...props} onNext={() => goTo(5)} />;
+      case 5: return <Step3ImportMenu {...props} onNext={handleImport} />;
+      case 6: return <StepComplete sessionState={sessionState} importedItems={importedItems} onDashboard={finishOnboarding} />;
       default: return null;
     }
   };
 
   return (
     <div className="flex min-h-screen bg-background">
-      <StepSidebar currentStep={currentStep > 3 ? 3 : currentStep} completedSteps={completedSteps} />
+      <StepSidebar currentStep={currentStep > 5 ? 5 : currentStep} completedSteps={completedSteps} />
       <div className="flex-1 flex flex-col min-h-screen">
         <div className="flex items-center gap-4 px-6 pt-6">
           <Button
@@ -112,7 +116,7 @@ const Index = () => {
             Dashboard
           </Button>
           <div className="flex-1 hidden md:block">
-            <ProgressBar currentStep={currentStep > 3 ? 4 : currentStep} totalSteps={TOTAL_STEPS + 1} />
+            <ProgressBar currentStep={currentStep > 5 ? 6 : currentStep} totalSteps={TOTAL_STEPS + 1} />
           </div>
         </div>
         {renderStep()}

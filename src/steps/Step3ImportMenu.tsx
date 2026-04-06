@@ -65,10 +65,10 @@ export function Step3ImportMenu({ sessionState, setSessionState, onNext }: Step3
 
   return (
     <StepLayout
-      stepNumber={3}
+      stepNumber={5}
       title="Import Restaurant Menu"
-      description="Upload a JSON file with your menu items to quickly set up your restaurant."
-      totalSteps={4}
+      description="Upload a JSON file with your menu items. Items will use the product family and tax rate you configured."
+      totalSteps={6}
     >
       <div className="space-y-6">
         {/* Drop zone */}
