@@ -13,7 +13,7 @@ import { initialSessionState } from "@/types/session";
 import { Button } from "@/components/ui/button";
 import type { SessionState, Restaurant, MenuItem } from "@/types/session";
 
-const TOTAL_STEPS = 3;
+const TOTAL_STEPS = 5;
 
 const Index = () => {
   const [view, setView] = useState<"dashboard" | "onboarding">("dashboard");
