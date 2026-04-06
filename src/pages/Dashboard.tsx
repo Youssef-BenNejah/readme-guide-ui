@@ -204,10 +204,12 @@ export default function Dashboard({ restaurants, onAddNew, onDelete, onSelect, s
                           </CardTitle>
                         </CardHeader>
                         <CardContent className="space-y-3">
-                          <InfoRow label="Tax Rate" value={selected.taxRate ? `${selected.taxRate} (${selected.taxRateValue}%)` : null} icon={Receipt} />
-                          <InfoRow label="Family" value={selected.family} icon={Package} />
-                          <InfoRow label="Category" value={selected.category} icon={Grid3X3} />
-                          <InfoRow label="Modifier Group" value={selected.modifierGroup} icon={Settings2} />
+                           <InfoRow label="Menu Items" value={`${selected.menuItems.length} item${selected.menuItems.length !== 1 ? "s" : ""}`} icon={UtensilsCrossed} />
+                           <InfoRow label="Tax Rate" value={selected.taxRate ? `${selected.taxRate} (${selected.taxRateValue}%)` : null} icon={Receipt} />
+                           <InfoRow label="Family" value={selected.family} icon={Package} />
+                           <InfoRow label="Category" value={selected.category} icon={Grid3X3} />
+                           <InfoRow label="Modifier Group" value={selected.modifierGroup} icon={Settings2} />
+                           <InfoRow label="Device ID" value={selected.deviceId} icon={Tablet} />
                         </CardContent>
                       </Card>
                     </div>
