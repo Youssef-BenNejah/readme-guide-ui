@@ -47,7 +47,7 @@ const Index = () => {
 
   const handleImport = (items: MenuItem[]) => {
     setImportedItems(items);
-    goTo(4);
+    goTo(6);
   };
 
   const finishOnboarding = () => {
