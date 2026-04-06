@@ -59,6 +59,10 @@ const Index = () => {
     }
   };
 
+  if (currentStep === 12) {
+    return renderStep();
+  }
+
   return (
     <div className="flex min-h-screen bg-background">
       <StepSidebar currentStep={currentStep > 10 ? 10 : currentStep} completedSteps={completedSteps} />
