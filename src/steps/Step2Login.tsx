@@ -43,8 +43,8 @@ export function Step2Login({ sessionState, setSessionState, onNext }: StepProps)
     return (
       <StepLayout stepNumber={2} title="Authenticate as Owner" description="Authentication successful.">
         {result.mustChangePin && (
-          <div className="p-3 mb-4 bg-yellow-500/10 border border-yellow-500/30 rounded-lg">
-            <p className="text-sm text-yellow-400 font-medium">⚠ You must change your PIN before continuing.</p>
+          <div className="p-3 mb-4 bg-primary/10 border border-primary/30 rounded-lg">
+            <p className="text-sm text-primary font-medium">⚠ You must change your PIN before continuing.</p>
           </div>
         )}
         <SuccessCard title="Logged In">
