@@ -10,7 +10,7 @@ interface StepCompleteProps {
   onDashboard: () => void;
 }
 
-export function StepComplete({ sessionState, onAddAnother }: StepCompleteProps) {
+export function StepComplete({ sessionState, onAddAnother, onDashboard }: StepCompleteProps) {
   const [showJson, setShowJson] = useState(false);
 
   return (
