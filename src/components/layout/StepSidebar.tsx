@@ -1,4 +1,4 @@
-import { Check, Circle } from "lucide-react";
+import { Check } from "lucide-react";
 
 interface Step {
   number: number;
@@ -9,14 +9,11 @@ interface Step {
 const STEPS: Step[] = [
   { number: 1, title: "Restaurant Setup" },
   { number: 2, title: "Owner Login" },
-  { number: 3, title: "Change PIN" },
-  { number: 4, title: "Restaurant Profile", optional: true },
-  { number: 5, title: "Tax Rate" },
-  { number: 6, title: "Product Family" },
-  { number: 7, title: "Menu Category" },
-  { number: 8, title: "Modifier Group", optional: true },
-  { number: 9, title: "Add Modifiers", optional: true },
-  { number: 10, title: "Menu Item" },
+  { number: 3, title: "Product Family" },
+  { number: 4, title: "Menu Category" },
+  { number: 5, title: "Modifier Group", optional: true },
+  { number: 6, title: "Add Modifiers", optional: true },
+  { number: 7, title: "Menu Item" },
 ];
 
 interface StepSidebarProps {
