@@ -20,7 +20,62 @@ const Index = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [sessionState, setSessionState] = useState<SessionState>(initialSessionState);
   const [completedSteps, setCompletedSteps] = useState<Set<number>>(new Set());
-  const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
+  const [restaurants, setRestaurants] = useState<Restaurant[]>([
+    {
+      id: "rest-001",
+      name: "Le Petit Bistro",
+      owner: "Ahmed Ben Ali",
+      deviceId: "dev-a1b2c3d4",
+      taxRate: "TVA Standard",
+      taxRateValue: 19,
+      family: "Plats Principaux",
+      category: "Cuisine Française",
+      modifierGroup: "Sauces",
+      menuItems: [
+        { name: "Couscous Royal", price: 18.500, family: "Plats Principaux", category: "Traditionnel", modifierGroup: "Sauces" },
+        { name: "Salade Niçoise", price: 12.000, family: "Entrées", category: "Salades", modifierGroup: null },
+        { name: "Lablabi", price: 8.500, family: "Plats Principaux", category: "Traditionnel", modifierGroup: "Épices" },
+        { name: "Brik à l'oeuf", price: 5.000, family: "Entrées", category: "Traditionnel", modifierGroup: null },
+      ],
+      createdAt: "2026-03-15T10:30:00Z",
+    },
+    {
+      id: "rest-002",
+      name: "Pizza Nova",
+      owner: "Sami Trabelsi",
+      deviceId: "dev-e5f6g7h8",
+      taxRate: "TVA Réduite",
+      taxRateValue: 7,
+      family: "Pizzas",
+      category: "Italien",
+      modifierGroup: "Toppings",
+      menuItems: [
+        { name: "Margherita", price: 14.000, family: "Pizzas", category: "Classique", modifierGroup: "Toppings" },
+        { name: "Quattro Formaggi", price: 18.000, family: "Pizzas", category: "Spéciale", modifierGroup: "Toppings" },
+        { name: "Tiramisu", price: 9.500, family: "Desserts", category: "Pâtisserie", modifierGroup: null },
+      ],
+      createdAt: "2026-03-20T14:00:00Z",
+    },
+    {
+      id: "rest-003",
+      name: "Dar El Jeld",
+      owner: "Fatma Sahli",
+      deviceId: "dev-i9j0k1l2",
+      taxRate: "TVA Standard",
+      taxRateValue: 19,
+      family: "Cuisine Tunisienne",
+      category: "Gastronomique",
+      modifierGroup: "Accompagnements",
+      menuItems: [
+        { name: "Ojja Merguez", price: 15.000, family: "Plats", category: "Traditionnel", modifierGroup: "Accompagnements" },
+        { name: "Mechouia", price: 7.500, family: "Entrées", category: "Salades", modifierGroup: null },
+        { name: "Makroudh", price: 4.000, family: "Desserts", category: "Pâtisserie", modifierGroup: null },
+        { name: "Thé à la menthe", price: 3.000, family: "Boissons", category: "Chaud", modifierGroup: null },
+        { name: "Kamounia", price: 16.500, family: "Plats", category: "Traditionnel", modifierGroup: "Épices" },
+      ],
+      createdAt: "2026-04-01T09:15:00Z",
+    },
+  ]);
   const [selectedRestaurantId, setSelectedRestaurantId] = useState<string | null>(null);
   const [importedItems, setImportedItems] = useState<MenuItem[]>([]);
 
