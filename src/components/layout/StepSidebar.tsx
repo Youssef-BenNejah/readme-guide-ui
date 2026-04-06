@@ -9,11 +9,7 @@ interface Step {
 const STEPS: Step[] = [
   { number: 1, title: "Restaurant Setup" },
   { number: 2, title: "Owner Login" },
-  { number: 3, title: "Product Family" },
-  { number: 4, title: "Menu Category" },
-  { number: 5, title: "Modifier Group", optional: true },
-  { number: 6, title: "Add Modifiers", optional: true },
-  { number: 7, title: "Menu Item" },
+  { number: 3, title: "Import Menu" },
 ];
 
 interface StepSidebarProps {
